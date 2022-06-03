@@ -1,19 +1,11 @@
 import type { NextPage } from "next";
-import Head from "next/head";
-import LoginForm from "./components/login-form";
+import { useSession } from "next-auth/react";
 
-const Home: NextPage = () => {
-  return (
-    <div>
-      <Head>
-        <title>Login Page</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <main>
-        <LoginForm/>
-      </main>
-    </div>
-  );
+export default function Home() {
+  const { data: session } = useSession();
+  console.log("====================================");
+  console.log(session);
+  console.log("====================================");
+  return <div></div>;
 };
 
-export default Home;
